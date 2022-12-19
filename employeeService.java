@@ -27,7 +27,7 @@ int id;
 String name;
 int age;
 String department;
-string designation;
+String designation;
 double salary;
 
 public employeeService(){
@@ -42,5 +42,65 @@ public void viewAllEmployees(){
         System.out.println(emp);
     }
 }
+public void viewEmployee(){
+    System.out.println("Enter ID");
+    id = scanner.nextInt();
+    for(employee emp: empset){
+        if(emp.getId() == id){
+            System.out.println(emp);
+            found = true;
+        }
+        if (!found){
+            System.out.println("Employee with this ID is not present");
+        }
+    }
+}
+public void updateEmployee(){
+    System.out.println("Enter ID");
+    id = scanner.nextInt();
+    boolean found = false;
+    for(employee emp: empset){
+        if(emp.getId()==id){
+            System.out.println("ENTER Name: ");
+            name = scanner.next();
+            System.out.println("Enter new Salary");
+            salary = scanner.nextDouble();
+            emp.setName(name);
+            emp.setSalary(salary);
+            System.out.println("Updated details of employee are ");
+            System.out.println(emp);
+            found = true;
+           
+        }
+        if (!found){
+            System.out.println("Employee is not present");
+            
+        }
+        else{
+            System.out.println("Employee details updated successfully");
+        }
+    }
+}
+public void deleteEmployee(){
+    System.out.println("Enter ID");
+    id = scanner.nextInt();
+    boolean found = false;
+    employee empDelete = null;
+    for (employee emp: empset){
+        if (emp.getId() == id){
+            empDelete = emp;
+            found = true;
+            
+        }
+         
+    } 
+    if(!found){
+        System.out.println("Employee not present");
+    }
+    else {
+        empset.remove(empDelete);
+        System.out.println("Employee deleted successfully ");
+    }
+} 
 
 }
