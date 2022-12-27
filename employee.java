@@ -18,9 +18,8 @@ public class employee {
     private String department;
     private double salary;
 
-    employee(int i, String james, int i0, String developer, String it) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
+       
     
   public int getId(){
       return id;
@@ -71,7 +70,7 @@ public class employee {
   }
   
   public  employee (int id, String name, int age, String designation, String department, double salary){
-      super ();
+      super();
       this.id = id;
       this.name = name;
       this.age = age;
